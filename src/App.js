@@ -1,17 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  // useEffect(() => {
-  //   alert(
-  //     "\n\n              --- ĐỌC KĨ CÂU HỎI TRƯỚC KHI TRẢ LỜI!!! ---\n\n\n                                               -.-"
-  //   );
-  // }, []);
-  const changText = () => {
-    document.getElementById("question").innerHTML = "i love you too!";
-  };
+  useEffect(() => {
+    alert(
+      "\n\n              --- ĐỌC KĨ CÂU HỎI TRƯỚC KHI TRẢ LỜI!!! ---\n\n\n          .𓆉˳·˖✶𓆩✮𓁺𓆪✶˖·˳.✶˚✮˚𓆉𓆪✶⋆.˚𓇼 ⋆✮.˚✶𓆟 ✶  \n \n\n                                                   -.-"
+    );
+  }, []);
   const [position, setPosition] = useState({ left: 0, top: 0 });
-
+  const [clicked, setClicked] = useState(false);
   const move = () => {
     const buttonWidth = 110;
     const buttonHeight = 70;
@@ -41,16 +38,28 @@ function App() {
     } while (distance < 222);
     setPosition({ left: newLeft, top: newTop });
   };
+  const onYes = () => {
+    setClicked(true);
+  };
 
   return (
     <div className="wrap">
       <video autoPlay muted loop playsInline>
         <source src="/video/falling snow.mp4" type="video/mp4" />
       </video>
-      {/* <img src="/img/heart.png" alt="heart" /> */}
-      <h2 id="question">i ask you?</h2>
-      <div className="button-group">
-        <button className="click-button" onClick={changText}>
+      <img src="/img/heart.png" alt="heart" />
+      <p className={`question ${clicked ? "hide" : ""}`}>Do you love me ?</p>
+      <div className={`show-love-text ${clicked ? "" : "hide"}`}>
+        <div className="wing">꧁𓇼꙳•̩̩͙❅*̩̩͙‧͙ </div>
+        <div className="love-content">
+          <div className="love-text">I love you too!</div>
+          <div className="love-name">𓆝 𓆟 Ngọc Trâm 𓆝 𓆟 </div>
+          <div className="fish">&#x1F420;</div>
+        </div>
+        <div className="wing"> ‧͙*̩̩͙❆ ͙˚•̩̩͙⋆𓇼꧂</div>
+      </div>
+      <div className={`button-group ${clicked ? "hide" : ""}`}>
+        <button className="click-button" onClick={onYes}>
           Yes
         </button>
         <div

@@ -1,3 +1,9 @@
+body {
+  overflow: hidden;
+}
+.hide {
+  display: none !important;
+}
 .wrap {
   height: 100vh;
   width: 100vw;
@@ -7,13 +13,19 @@
   align-items: center;
   position: relative;
 }
-#question {
+.question {
+  letter-spacing: -2px;
+  font-weight: 600;
+  font-family: Cursive;
   font-size: 70px;
   z-index: 3;
   color: #8c63a4;
-  margin: 0;
+  margin: 0 0 0 20px;
   text-shadow: 1px 0px 10px #f55c63e5, 2px 2px 10px white,
     15px 15px 6px rgb(30, 29, 29);
+  text-align: center;
+  user-select: none;
+  transition: 0.5s;
 }
 .button-group {
   margin: 20px;
@@ -33,6 +45,7 @@
   border: solid 2px rgba(253, 253, 106, 0.877);
   filter: drop-shadow(0 0 15px #a5f315);
   text-shadow: 0 0 1px #8c63a4, 0 0 2px #6ec3c9;
+  box-shadow: 7px 5px 7px #383c30;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -61,12 +74,14 @@
   border: solid 2px #005586;
   background-color: #6ec3c9;
   text-shadow: 0px 0px 5px #a5f315, 0px 0px 3px #fffafa;
-  box-shadow: 0 0 15px #1fa8ec;
+  box-shadow: 0 0 17px #1fa8ec, 7px 5px 7px #1b1c18;
+  cursor: pointer;
 }
 img {
   position: absolute;
   z-index: 2;
-  width: 800px;
+  width: 880px;
+  margin: 0 30px 0 0;
 }
 .bg-video {
   width: 100%;
@@ -78,4 +93,51 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  padding: 0 10px 0 0;
+}
+
+.show-love-text {
+  z-index: 3;
+  color: #8c63a4;
+  text-shadow: 1px 0px 10px #f55c63e5, 2px 2px 10px white,
+    15px 15px 6px rgb(30, 29, 29);
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  user-select: none;
+  transition: 0.5s;
+}
+.love-name {
+  font-size: 55px;
+  display: flex;
+  justify-content: space-around;
+  font-style: italic;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin: 0 0 10px 0;
+  color: #87d0d3;
+  text-shadow: -3px -1px 6px #f0f073, 12px 10px 6px rgb(30, 29, 29),
+    3px 1px 5px rgb(245, 233, 233);
+}
+.love-text {
+  font-family: Papyrus, fantasy;
+  font-size: 60px;
+  font-weight: 650;
+}
+
+.wing {
+  font-size: 60px;
+  text-shadow: -3px -1px 4px #fafa6d, 3px 2px 5px #3545cfd4,
+    12px 10px 6px rgb(30, 29, 29);
+  color: #f1f7a1;
+  margin: 0 0 30px 10px;
+}
+.fish {
+  font-size: 60px;
+}
+.love-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
