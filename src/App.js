@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { del } from "framer-motion/client";
 
 function App() {
   useEffect(() => {
@@ -9,6 +10,7 @@ function App() {
   }, []);
   const [position, setPosition] = useState({ left: 0, top: 0 });
   const [clicked, setClicked] = useState(false);
+  const [deleteAll, setDeleteAll] = useState(false);
   const move = () => {
     const buttonWidth = 110;
     const buttonHeight = 70;
@@ -24,12 +26,12 @@ function App() {
       randomY = Math.random();
       newLeft =
         randomX <= 0.5
-          ? Math.round(randomX * 2 * -centerX - 160)
-          : Math.round(randomX * centerX - 160);
+          ? Math.round(randomX * 2 * -centerX - 150)
+          : Math.round(randomX * centerX - 150);
       newTop =
         randomY <= 0.5
-          ? Math.round(randomY * 2 * -centerY - 100)
-          : Math.round(randomY * centerY - 100);
+          ? Math.round(randomY * 2 * -centerY - 50)
+          : Math.round(randomY * centerY - 50);
 
       const dx = newLeft - position.left;
       const dy = newTop - position.top;
@@ -41,10 +43,18 @@ function App() {
   const onYes = () => {
     setClicked(true);
   };
-
+  const disappear = () => {
+    setDeleteAll(true);
+  };
   return (
     <div className="wrap">
-      <video autoPlay muted loop playsInline>
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className={`video ${deleteAll ? "delete" : ""}`}
+      >
         <source src="/video/falling snow.mp4" type="video/mp4" />
       </video>
       <img src="/img/heart.png" alt="heart" />
@@ -54,7 +64,9 @@ function App() {
         <div className="love-content">
           <div className="love-text">I love you too!</div>
           <div className="love-name">𓆝 𓆟 Ngọc Trâm 𓆝 𓆟 </div>
-          <div className="fish">&#x1F420;</div>
+          <div className="fish" onClick={disappear}>
+            &#x1F420;
+          </div>
         </div>
         <div className="wing"> ‧͙*̩̩͙❆ ͙˚•̩̩͙⋆𓇼꧂</div>
       </div>
