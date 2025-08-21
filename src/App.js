@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   useEffect(() => {
     alert(
-      "\n\n              --- ĐỌC KĨ CÂU HỎI TRƯỚC KHI TRẢ LỜI!!! ---\n\n\n          .𓆉˳·˖✶𓆩✮𓁺𓆪✶˖·˳.✶˚✮˚𓆉𓆪✶⋆.˚𓇼 ⋆✮.˚✶𓆟 ✶  \n \n\n                                                   -.-"
+      "\n\n              --- ĐỌC KĨ CÂU HỎI TRƯỚC KHI TRẢ LỜI!!! --- \n \n\n                                                   -.-"
     );
   }, []);
   const [position, setPosition] = useState({ left: 0, top: 0 });
@@ -59,7 +59,7 @@ function App() {
   };
   return (
     <div className="wrap">
-      <video
+      {/* <video
         autoPlay
         muted
         loop
@@ -67,10 +67,21 @@ function App() {
         className={`video ${deleteAll ? "deleteAll" : ""}`}
       >
         <source src="/video/falling snow.mp4" type="video/mp4" />
-      </video>
-      <img src="/img/heart.png" alt="heart" />
-      <p className={`question ${clicked ? "hide" : ""}`}>Do you love me ?</p>
-      <div className={`show-love-text ${clicked ? "" : "hide"}`}>
+      </video> */}
+      {/* <img src="/img/heart.png" alt="heart" /> */}
+      <img
+        src="/img/gay.jpg"
+        alt="sus"
+        className={`img ${clicked ? "hide" : ""}`}
+      />
+      <img
+        src="/img/gay1.jpg"
+        alt="suss"
+        className={`img ${clicked ? "" : "hide"}`}
+      />
+      <p className={`question ${clicked ? "hide" : ""}`}>ARE YOU GAY???</p>
+      <div className={`gay ${clicked ? "" : "hide"}`}>I KNEW IT</div>
+      {/* <div className={`show-love-text ${clicked ? "" : "hide"}`}>
         <div className="wing">꧁𓇼꙳•̩̩͙❅*̩̩͙‧͙ </div>
         <div className="love-content">
           <div className="love-text">I love you too!</div>
@@ -86,7 +97,7 @@ function App() {
           </div>
         </div>
         <div className="wing"> ‧͙*̩̩͙❆ ͙˚•̩̩͙⋆𓇼꧂</div>
-      </div>
+      </div> */}
       <div className={`button-group ${clicked ? "hide" : ""}`}>
         <button className="click-button" onClick={onYes}>
           Yes
