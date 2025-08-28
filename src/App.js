@@ -59,48 +59,49 @@ function App() {
   };
   return (
     <div className="wrap">
-      {/* <video
+      <video
         autoPlay
         muted
         loop
         playsInline
-        className={`video ${deleteAll ? "deleteAll" : ""}`}
+        className={`video ${clicked ? "hide" : ""}`}
       >
         <source src="/video/falling snow.mp4" type="video/mp4" />
-      </video> */}
+      </video>
       {/* <img src="/img/heart.png" alt="heart" /> */}
+
+      <p className={`question ${clicked ? "hide" : ""}`}>
+        Cậu có thương tớ honggg 🥺🥺💔💔
+      </p>
       <img
-        src="/img/gay.jpg"
-        alt="sus"
-        className={`img ${clicked ? "hide" : ""}`}
-      />
-      <img
-        src="/img/gay1.jpg"
-        alt="suss"
+        src="/img/fireworks.jpg"
+        alt="fireworks"
         className={`img ${clicked ? "" : "hide"}`}
       />
-      <p className={`question ${clicked ? "hide" : ""}`}>ARE YOU GAY???</p>
-      <div className={`gay ${clicked ? "" : "hide"}`}>I KNEW IT</div>
-      {/* <div className={`show-love-text ${clicked ? "" : "hide"}`}>
-        <div className="wing">꧁𓇼꙳•̩̩͙❅*̩̩͙‧͙ </div>
-        <div className="love-content">
-          <div className="love-text">I love you too!</div>
-          <div
+      <div className={`show-love-text ${clicked ? "" : "hide"}`}>
+        {/* <div className="wing">꧁𓇼꙳•̩̩͙❅*̩̩͙‧͙ </div> */}
+
+        <div className={`love-content ${deleteAll ? "hide" : ""}`}>
+          <div className="love-text">Tớ củm vậy 🥺🥺 </div>
+          {/* <div
             className={`love-name ${glowUp ? "glowUp" : ""}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             𓆝 𓆟 Ngọc Trâm 𓆝 𓆟
-          </div>
-          <div className="fish" onClick={disappear}>
-            &#x1F420;
-          </div>
+          </div> */}
+          <img
+            src="/img/gaumeo.png"
+            alt="gaumeo"
+            className="gaumeo"
+            onClick={disappear}
+          />
         </div>
-        <div className="wing"> ‧͙*̩̩͙❆ ͙˚•̩̩͙⋆𓇼꧂</div>
-      </div> */}
+        {/* <div className="wing"> ‧͙*̩̩͙❆ ͙˚•̩̩͙⋆𓇼꧂</div> */}
+      </div>
       <div className={`button-group ${clicked ? "hide" : ""}`}>
         <button className="click-button" onClick={onYes}>
-          Yes
+          Cóa
         </button>
         <div
           className="wrap-movebutton"
@@ -110,7 +111,7 @@ function App() {
             top: position.top,
           }}
         >
-          <div className="move-button">No</div>
+          <div className="move-button">Hong</div>
         </div>
       </div>
     </div>
